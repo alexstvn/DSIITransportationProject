@@ -8,7 +8,7 @@ from dash import dcc, html, callback
 from dash.dependencies import Input, Output
 
 ################### READING DATA ###################
-df = pd.read_csv(r"Z:\Data\RIDERSHIP\RidershipData.csv")
+df = pd.read_csv(r"RIDERSHIP (Fall 2023)\InputData\RidershipData.csv")
 # df = pd.read_csv(r"RidershipData.csv")
 
 date_format = '%Y/%m/%d'

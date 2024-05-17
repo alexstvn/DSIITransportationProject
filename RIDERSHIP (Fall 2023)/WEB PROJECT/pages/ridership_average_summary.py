@@ -8,7 +8,7 @@ from dash import dcc, html, callback
 from dash.dependencies import Input, Output
 
 ################### READING DATA ###################
-df = pd.read_csv(r"Z:\Data\RIDERSHIP\RidershipData.csv")
+df = pd.read_csv(r"RIDERSHIP (Fall 2023)\InputData\RidershipData.csv")
 # df = pd.read_csv(r"RidershipData.csv")
 
 #removing cancelled trips, skipped/waiting stops (bc no riders getting on)
@@ -80,7 +80,7 @@ layout = html.Div([
             dcc.Dropdown(
                 id="stop-dropdown",
                 options=[],
-                value='Rabb Steps',
+                value='Admissions',
                 style = {'font-family': 'Segoe UI', 'padding': '0 2em'}
             ),
         ], style={'width': '75%'}),

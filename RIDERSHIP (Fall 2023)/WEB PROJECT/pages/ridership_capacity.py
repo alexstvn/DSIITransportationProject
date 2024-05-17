@@ -10,7 +10,7 @@ from dash.dependencies import Input, Output
 pd.options.mode.chained_assignment = None  # default='warn'
 
 ################### READING DATA ###################
-df = pd.read_csv(r"Z:\Data\RIDERSHIP\RidershipData.csv")
+df = pd.read_csv(r"RIDERSHIP (Fall 2023)\InputData\RidershipData.csv")
 # df = pd.read_csv(r"RidershipData.csv")
 
 columns_to_remove = ['Actual Arrival', 'Actual Departure', 'Riders On', 'Riders Off', 'Riders Left']

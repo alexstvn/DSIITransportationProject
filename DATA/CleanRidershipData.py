@@ -3,9 +3,8 @@ import os
 
 def main():
     # STEP 0: Create references for directories and file names.
-    new_data_folder = (r"Z:\Data\RIDERSHIP\Ridership CSV Files") # data that is being added
-    read_data_folder = (r"Z:\Data\RIDERSHIP\Already Added") # where data is moved once added
-    data_folder = r"Z:\Data\RIDERSHIP"
+    new_data_folder = (r"DATA\Ridership_Uncleaned") # data that is being added
+    data_folder = r"RIDERSHIP (Fall 2023)\InputData"
 
     filtered_file_name = "RidershipData.csv"
     unfiltered_file_name = "UnfilteredRidershipData.csv"
@@ -27,22 +26,18 @@ def main():
                 print(file_path)
                 df = pd.read_csv(file_path)
                 dfs.append(df)
-                # Optionally, move the processed file to another folder
-                # os.rename(file_path, os.path.join(read_data_folder, file))
 
     # STEP 3: Append the dataframes to the existing data file containing all the rows.
-    # if file exists: 
-        # append rows
-    df = pd.concat(dfs, ignore_index=True)
+    if len(dfs) > 1:
+        df = pd.concat(dfs, ignore_index=True)
+    else:
+        df = dfs[0]
 
     # STEP 4: Cleaning dataframe.
     clean_df(df)
 
     # STEP 5: Saving unfiltered dataframe.
     df.to_csv(unfiltered_path, index=False)
-    # updating code folder
-    web_app_file = r"Z:\Code\Web Application\RidershipData.csv"
-    df.to_csv(web_app_file, index=False)
 
     # STEP 6: Filtering out cancelled rides + skipped/awaiting stops
     filter_df(df)
@@ -54,7 +49,12 @@ def main():
 def clean_df(df):
     # DROPPING COLUMNS
     columns_to_drop = ['Vehicle Id', 'Vehicle', 'Device Down']
-    df.drop(columns=columns_to_drop, inplace=True)
+    # Check if all columns to drop are in the DataFrame
+    columns_to_drop = [col for col in columns_to_drop if col in df.columns]
+    # Drop the columns if they exist
+    if columns_to_drop:
+        df.drop(columns=columns_to_drop, inplace=True)
+
     
     # CLEANING UP ROUTE COLUMN
     df['Route'] = df['Route'].replace('Waltham Shuttle (Mon-Fri)', 'Waltham Shuttle')
