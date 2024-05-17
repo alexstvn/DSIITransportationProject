@@ -62,10 +62,10 @@ def clean_df(df):
     df['Route'] = df['Route'].replace('Campus Shuttle (Mon-Fri)', 'Campus Shuttle')
 
     # CLEANING UP STOP COLUMN
-    df['Stop'] = df['Stop'].str.replace("\(MBTA Stop\)", "").str.strip()
+    df['Stop'] = df['Stop'].str.replace(r"\(MBTA Stop\)", "", regex=True).str.strip()
 
     # SHORTENING STOP/ROUTE TEXT
-    df = df.replace('Usdan Student Center (across from Rabb steps)', 'Rabb Steps')
+    df = df['Stop'].replace('Usdan Student Center (across from Rabb steps)', 'Rabb Steps')
     df = df.replace('Boston Cambridge Shuttle', 'Boston Shuttle')
     df = df.replace('South Street @ Brandeis Commuter Rail Station', 'Commuter Rail Station')
     df = df.replace('Moody St at Main St (Merc Apartments)', 'Moody St/Main St')
