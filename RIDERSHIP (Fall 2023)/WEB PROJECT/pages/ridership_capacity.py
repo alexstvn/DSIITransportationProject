@@ -1,7 +1,7 @@
 import dash, dash.dependencies as dd
 import pandas as pd
 from datetime import datetime
-
+import os
 import plotly.subplots as sp, plotly.express as px, plotly.graph_objects as go
 from plotly.subplots import make_subplots
 from dash import dcc, html, callback
@@ -10,9 +10,16 @@ from dash.dependencies import Input, Output
 pd.options.mode.chained_assignment = None  # default='warn'
 
 ################### READING DATA ###################
-df = pd.read_csv(r"RIDERSHIP (Fall 2023)\InputData\RidershipData.csv")
-# df = pd.read_csv(r"RidershipData.csv")
+# Get the directory of the current script
+script_dir = os.path.dirname(__file__)
 
+# Construct the full path to the CSV file
+file_path = os.path.join(script_dir, '..','..', 'InputData', 'RidershipData.csv')
+
+# Read the CSV file
+df = pd.read_csv(file_path)
+
+################### MODIFY DATA ###################
 columns_to_remove = ['Actual Arrival', 'Actual Departure', 'Riders On', 'Riders Off', 'Riders Left']
 df = df.drop(columns=columns_to_remove)
 
