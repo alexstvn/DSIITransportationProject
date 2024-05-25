@@ -1,9 +1,9 @@
-# GITHUB TUTORIALS
-
- 1. **DOWNLOADING THE REPOSITORY**: In this video, we will walk through how to 
-
-# PROJECT TUTORIALS
-## RIDERSHIP
-### Data Configuration
-
- 1. **DOWNLOADING + CLEANING DATA**: This video will demonstrate how one should download and format the data in order to ensure that the data cleaning script works without any issues.
+# VIDEO TUTORIALS IN PROGRESS
+1. **Using GitHub and Processing Data**: This video is broken into the following:
+    - How to download the folder from GitHub to use on your personal laptop.
+    - Processing and adding data.
+        - Ridership Data
+            - Adding Data from TripShot directly to the folders *and* adding from pre-existing data *and* running the cleaning data script.
+            - Adding an already clean file.
+        - Feedback Analysis Data
+            - Downloading from Google Sheets.
