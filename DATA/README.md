@@ -13,8 +13,11 @@ This folder is mostly used for **data cleaning**, meaning if we're downloading r
     - Then, within a folder (e.g. `Spring 2024`), we can have a larger list of data:\
     ![Example photo of directory.](../VIDEO%20TUTORIALS/_img/DATA_Ridership_TripShot_3.png)
     - Again, you can name it anything that works for you! It will not affect the code.
+
 ### Cleaning Data
-1. Place all ridership into `Ridership_Uncleaned`.
-2. Right-click the folder `DATA` in file explorer and click *Open in Terminal*.
-3. Assuming Python is downloaded, type `python CleanRidershipData.py` into the terminal and hit enter. It should print out the data file names as it processes it.
-4. A new file named `RidershipData.csv` should appear in `RIDERSHIP (Fall 2023) > InputData`.
+1. Make sure all **uncleaned** ridership data into `Ridership_Uncleaned`.
+2. Now, go into the `DATA` folder and double click `CleanRidershipData.py`.
+3. A new file named `RidershipData.csv` should appear in `RIDERSHIP (Fall 2023)/InputData`.
+
+### Inserting already clean data.
+1. Drag and drop the already clean data file into `RIDERSHIP (Fall 2023)/InputData`, but if you're unsure, you can follow the steps in **Obtaining Data** and **Cleaning Data**. It should *not* have any impact on the file.
