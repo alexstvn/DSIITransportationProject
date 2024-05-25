@@ -7,6 +7,6 @@ This contains the necessary files to run the web application (all of the dashboa
 
 2. Type `python main_app.py` and hit enter.
 
-![How to run python program.](../VIDEO%20TUTORIALS/_img/RidershipREADME_2.jpg)
+![How to run python program.](../VIDEO%20TUTORIALS/_img/RidershipREADME_2.png)
 
 3. An IP address should 
